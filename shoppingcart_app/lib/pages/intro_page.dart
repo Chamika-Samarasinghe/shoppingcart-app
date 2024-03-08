@@ -1,4 +1,7 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+
+import 'home_page.dart';
 
 class IntroPage extends StatelessWidget {
   const IntroPage({super.key});
@@ -11,8 +14,8 @@ class IntroPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 25.0),
           child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
-
               //logo
               Padding(
                 padding: const EdgeInsets.all(25.0),
@@ -21,18 +24,22 @@ class IntroPage extends StatelessWidget {
                   height: 300,
                 ),
               ),
-              const SizedBox(height: 48,),
+              const SizedBox(
+                height: 48,
+              ),
 
               //title
               const Text(
                 'Just Do It',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 20,
+                ),
               ),
 
-              const SizedBox(height: 24,),
+              const SizedBox(
+                height: 24,
+              ),
 
               //sub title
               const Text(
@@ -44,26 +51,33 @@ class IntroPage extends StatelessWidget {
                 textAlign: TextAlign.center,
               ),
 
-              const SizedBox(height: 48,),
+              const SizedBox(
+                height: 48,
+              ),
 
               //start now button
-              Container(
-                decoration: BoxDecoration(
-                    color: Colors.grey[900],
-                  borderRadius: BorderRadius.circular(12),
+              GestureDetector(
+                onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => HomePage(),
+                  ),
                 ),
-                padding: const EdgeInsets.all(25),
-                child: Center(
-                  child: const Text(
-                    'Shop Now',
-                    style: TextStyle(color: Colors.white
+                child: Container(
+                  decoration: BoxDecoration(
+                    color: Colors.grey[900],
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                  padding: const EdgeInsets.all(25),
+                  child: Center(
+                    child: const Text(
+                      'Shop Now',
+                      style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
               ),
-
             ],
-
           ),
         ),
       ),
